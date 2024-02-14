@@ -1,0 +1,218 @@
+#container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(../images/tul.png); /* URL de la imagen de girasoles */
+    background-size: cover;
+    background-position: center;
+    position: relative; /* Añadido para que la posición absoluta de la tarjeta sea relativa a este contenedor */
+  }
+  
+  .book{
+    position: relative;
+    border-radius: 10px;
+    width: 400px; /* Aumenta el ancho de la tarjeta */
+    height: 600px; /* Aumenta la altura de la tarjeta */
+    background-image: url(../images/aaa.jpeg); /* Placeholder image */
+    background-size: cover;
+    background-position: center;
+    background-size: 97%;
+    -webkit-box-shadow: 1px 1px 12px black;
+    box-shadow: 1px 1px 12px black;
+    -webkit-transform: preserve-3d;
+    -ms-transform: preserve-3d;
+    transform: preserve-3d;
+    -webkit-perspective: 2000px;
+    perspective: 2000px;
+    background-repeat: no-repeat;
+  }
+  .book::before {
+    content: "Teamo miamor"; /* Contenido del texto */
+    position: absolute;
+    top: 20px; /* Ajusta la posición vertical según sea necesario */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente */
+    color: white; /* Color de texto blanco */
+    font-size: 24px; /* Tamaño de fuente */
+    font-family: Arial, sans-serif; /* Familia de fuente */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 5px; /* Borde redondeado */
+    white-space: nowrap; /* Evita que el texto se divida en múltiples líneas */
+    opacity: 0; /* Inicialmente transparente */
+    transition: opacity 0.3s ease; /* Transición suave */
+  }
+  
+  .book:hover::before {
+    opacity: 1; /* Hacer visible al pasar el mouse */
+  }
+
+  .cover{
+    top: 0;
+    position: absolute;
+    background-color: lightgray;
+    background-image: linear-gradient( 40deg,rgb(218, 1, 203) , black);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-transform-origin: 0;
+    -ms-transform-origin: 0;
+    transform-origin: 0;
+    -webkit-box-shadow: 1px 1px 12px black;
+    box-shadow: 1px 1px 12px black; 
+  }
+  
+  
+  .book:hover .cover{
+   -webkit-transition: all 0.5s;
+   transition: all 0.5s;
+   -webkit-transform: rotatey(-85deg);
+   -ms-transform: rotateY(-85deg);
+   transform: rotatey(-95deg);
+  }
+  
+  .heart {
+    position: relative;
+    background-color: #e60303;
+    height: 120px; /* Aumentado de 90px a 120px */
+    width: 120px; /* Aumentado de 90px a 120px */
+    top: 290px; /* Ajustado de 260px a 290px */
+    left: 140px; /* Ajustado de 112px a 140px */
+    transform: rotate(-45deg);
+    animation: beat 0.8s infinite;
+  }
+  
+  .heart:before,
+  .heart:after {
+    content: "";
+    background-color: #e60303;
+    border-radius: 50%;
+    height: 120px; /* Aumentado de 90px a 120px */
+    width: 120px; /* Aumentado de 90px a 120px */
+    position: absolute;
+  }
+  
+  .heart:before {
+    top: -60px; /* Ajustado de -45px a -60px */
+    left: 0;
+  }
+  
+  .heart:after {
+    left: 60px; /* Ajustado de 45px a 60px */
+    top: 0;
+  }
+  
+  .smile {
+    position: absolute;
+    width: 60px; /* Ajustado de 45px a 60px */
+    height: 30px; /* Ajustado de 22.5px a 30px */
+    background-color: #333;
+    z-index: 1;
+    border-radius: 0 0 180px 180px; /* Ajustado de 0 0 150px 150px a 0 0 180px 180px */
+    top: 360px; /* Ajustado de 300px a 450px */
+    left: 170px; /* Ajustado de 135px a 200px */
+    overflow: hidden;
+  }
+  
+  .smile:before {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    width: 40px; /* Ajustado de 30px a 40px */
+    height: 40px; /* Ajustado de 30px a 40px */
+    background-color: #030202;
+    top: 10px; /* Ajustado de 7.5px a 10px */
+    left: 10px; /* Ajustado de 7.5px a 10px */
+  }
+  
+  .eyes {
+    position: absolute;
+    border-radius: 50%;
+    background-color: #333;
+    width: 20px; /* Ajustado de 15px a 20px */
+    height: 20px; /* Ajustado de 15px a 20px */
+    z-index: 1;
+    top: 320px; /* Ajustado de 277.5px a 415px */
+    left: 230px; /* Ajustado de 180px a 270px */
+    box-shadow: -80px 0 #333; /* Ajustado de -60px 0 #333 a -80px 0 #333 */
+    transform-origin: 50%;
+    animation: close 2s infinite;
+  }
+  @keyframes close {
+    0%, 100% {
+      transform: scale(1, .05);
+      }
+    5%, 95% {
+          transform: scale(1, 1);
+      }
+  }
+  @keyframes beat {
+    0%, 40%, 100% {
+      transform: scale(1) rotate(-45deg);
+    }
+    25%, 60% {
+      transform: scale(1.1) rotate(-45deg);
+    }
+  }
+  
+  
+  .notes {
+    position: absolute;
+    color: #ff9595;
+    font-size: 45px;
+    width: 300px;
+    text-align: center;
+    font-family: 'Protest Revolution', sans-serif;
+    top: 30px; /* Ajusta la posición vertical según sea necesario */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .notes:before,
+  .notes:after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .notes:before {
+    content: "San Valentín";
+    top: 50px; /* Ajusta la posición vertical según sea necesario */
+    color: #d04e4e;
+    font-family: 'Protest Riot', sans-serif;
+  }
+  
+  .notes:after {
+    content: "amor!";
+    top: 100px; /* Ajusta la posición vertical según sea necesario */
+    font-family: 'Protest Riot', sans-serif;
+  }
+
+  .notes2 {
+    position: absolute;
+    color: #ff9595;
+    font-size: 20px;
+    width: 300px;
+    text-align: center;
+    font-family: 'Protest Revolution', sans-serif;
+    top: 500px; /* Ajusta la posición vertical según sea necesario */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .notes2:before,
+  .notes2:after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    width: 100%;
+  }
+  
